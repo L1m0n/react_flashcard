@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './index.css';
+import {render} from 'react-dom';
+import App from './components/App';
+import cards from './reducers/index';
+import {createStore, combineReducers} from 'redux';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+const store = createStore(combineReducers({
+    cards
+}));
+
+render(
+    <App />,
+    document.getElementById('root')
 );
+
+
